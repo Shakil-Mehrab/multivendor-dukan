@@ -16,7 +16,7 @@
       </div>
 
       <nav
-        class="flex flex-col flex-1 py-2 pt-12 overflow-y-auto border-t border-gray-700 "
+        class="flex flex-col flex-1 pt-10 overflow-y-auto border-t border-gray-700 "
         aria-label="Sidebar"
       >
         <div class="px-2 space-y-1">
