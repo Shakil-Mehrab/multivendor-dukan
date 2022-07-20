@@ -20,7 +20,7 @@
       </div>
 
       <div
-        class="flex items-center flex-shrink-0 px-4 py-10 border-b border-gray-900 "
+        class="flex items-center flex-shrink-0 px-2 py-5 border-b border-gray-900 "
       >
         <img
           class="w-auto h-10 rounded-md"
@@ -33,86 +33,83 @@
         class="flex flex-col flex-1 pt-10 overflow-y-auto border-t border-gray-700 "
         aria-label="Sidebar"
       >
-        <div class="px-2 space-y-1">
+        <div class="px-2 space-y-2">
           <nuxt-link
-            to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'index' }"
+            to="/"
+            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            :class="
+              $route.name === 'index'
+                ? 'bg-navy-200 text-white'
+                : 'text-gray-300'
+            "
           >
-            <NewspaperIcon
-              class="w-6 h-6 mr-4 text-gray-200"
-              aria-hidden="true"
-            />
-            Articles
+            <HomeIcon class="w-6 h-6 mr-4" aria-hidden="true" />
+            Home
           </nuxt-link>
 
           <nuxt-link
-            :to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'categories' }"
+            :to="{ name: 'orders' }"
+            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            :class="
+              $route.name === 'orders'
+                ? 'bg-navy-200 text-white'
+                : 'text-gray-300'
+            "
           >
-            <CollectionIcon
-              class="w-6 h-6 mr-4 text-gray-200"
-              aria-hidden="true"
-            />
-            Categories
+            <ShoppingCartIcon class="w-6 h-6 mr-4" aria-hidden="true" />
+            Orders
           </nuxt-link>
 
           <nuxt-link
-            :to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'topics' }"
+            :to="{ name: 'delivery' }"
+            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            :class="
+              $route.name === 'delivery'
+                ? 'bg-navy-200 text-white'
+                : 'text-gray-300'
+            "
           >
-            <BookOpenIcon
-              class="w-6 h-6 mr-4 text-gray-200"
-              aria-hidden="true"
-            />
-            Topics
+            <TruckIcon class="w-6 h-6 mr-4" aria-hidden="true" />
+            Delivery
           </nuxt-link>
 
           <nuxt-link
-            :to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'regions' }"
+            :to="{ name: 'products' }"
+            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            :class="
+              $route.name === 'products'
+                ? 'bg-navy-200 text-white'
+                : 'text-gray-300'
+            "
           >
-            <LocationMarkerIcon
-              class="w-6 h-6 mr-4 text-gray-200"
-              aria-hidden="true"
-            />
-            Regions
+            <ViewGridIcon class="w-6 h-6 mr-4" aria-hidden="true" />
+            Products
           </nuxt-link>
 
           <nuxt-link
-            :to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'tags' }"
+            :to="{ name: 'payments' }"
+            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            :class="
+              $route.name === 'payments'
+                ? 'bg-navy-200 text-white'
+                : 'text-gray-300'
+            "
           >
-            <TagIcon class="w-6 h-6 mr-4 text-gray-200" aria-hidden="true" />
-            Tags
+            <CashIcon class="w-6 h-6 mr-4" aria-hidden="true" />
+            Payments
           </nuxt-link>
 
           <nuxt-link
-            :to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'media' }"
+            :to="{ name: 'customers' }"
+            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            :class="
+              $route.name === 'customers'
+                ? 'bg-navy-200 text-white'
+                : 'text-gray-300'
+            "
           >
-            <DatabaseIcon
-              class="w-6 h-6 mr-4 text-gray-200"
-              aria-hidden="true"
-            />
-            Media
-          </nuxt-link>
-
-          <nuxt-link
-            :to="{}"
-            class="flex items-center px-2 py-2 text-sm font-medium leading-6 text-gray-200 rounded-md  group hover:text-white"
-            :class="{ 'bg-navy-200': $route.name === 'users' }"
-          >
-            <UserGroupIcon
-              class="w-6 h-6 mr-4 text-gray-200"
-              aria-hidden="true"
-            />
-            Users
+            <UserGroupIcon class="w-6 h-6 mr-4" aria-hidden="true" />
+            Customers
           </nuxt-link>
         </div>
       </nav>
@@ -125,29 +122,24 @@
 import { mapActions } from "vuex";
 
 import {
-  CogIcon,
-  TagIcon,
-  CollectionIcon,
-  BookOpenIcon,
-  QuestionMarkCircleIcon,
-  ShieldCheckIcon,
-  DatabaseIcon,
+  HomeIcon,
+  ShoppingBag,
+  TruckIcon,
+  ViewGridIcon,
+  CashIcon,
   UserGroupIcon,
   XIcon,
 } from "@vue-hero-icons/outline";
+import { ShoppingCartIcon } from "@vue-hero-icons/solid";
 
-import { LocationMarkerIcon, NewspaperIcon } from "@vue-hero-icons/solid";
 export default {
   components: {
-    CogIcon,
-    TagIcon,
-    LocationMarkerIcon,
-    CollectionIcon,
-    NewspaperIcon,
-    BookOpenIcon,
-    QuestionMarkCircleIcon,
-    ShieldCheckIcon,
-    DatabaseIcon,
+    HomeIcon,
+    ShoppingBag,
+    ShoppingCartIcon,
+    TruckIcon,
+    ViewGridIcon,
+    CashIcon,
     UserGroupIcon,
     XIcon,
   },

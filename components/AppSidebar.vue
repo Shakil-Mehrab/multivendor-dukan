@@ -4,7 +4,14 @@
   >
     <div class="flex flex-col flex-grow pb-4 overflow-y-auto liner-gradient">
       <div
-        class="flex items-center flex-shrink-0 px-2 py-5 border-b border-gray-900 "
+        class="
+          flex
+          items-center
+          flex-shrink-0
+          px-2
+          py-5
+          border-b border-gray-900
+        "
       >
         <img
           class="w-auto h-10 rounded-md"
@@ -15,13 +22,28 @@
       </div>
 
       <nav
-        class="flex flex-col flex-1 pt-10 overflow-y-auto border-t border-gray-700 "
+        class="
+          flex flex-col flex-1
+          pt-10
+          overflow-y-auto
+          border-t border-gray-700
+        "
         aria-label="Sidebar"
       >
         <div class="px-2 space-y-2">
           <nuxt-link
             to="/"
-            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            class="
+              flex
+              items-center
+              p-2
+              text-sm
+              font-medium
+              leading-6
+              rounded-md
+              group
+              hover:text-white hover:bg-navy-200
+            "
             :class="
               $route.name === 'index'
                 ? 'bg-navy-200 text-white'
@@ -34,7 +56,17 @@
 
           <nuxt-link
             :to="{ name: 'orders' }"
-            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            class="
+              flex
+              items-center
+              p-2
+              text-sm
+              font-medium
+              leading-6
+              rounded-md
+              group
+              hover:text-white hover:bg-navy-200
+            "
             :class="
               $route.name === 'orders'
                 ? 'bg-navy-200 text-white'
@@ -47,7 +79,17 @@
 
           <nuxt-link
             :to="{ name: 'delivery' }"
-            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            class="
+              flex
+              items-center
+              p-2
+              text-sm
+              font-medium
+              leading-6
+              rounded-md
+              group
+              hover:text-white hover:bg-navy-200
+            "
             :class="
               $route.name === 'delivery'
                 ? 'bg-navy-200 text-white'
@@ -60,7 +102,17 @@
 
           <nuxt-link
             :to="{ name: 'products' }"
-            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            class="
+              flex
+              items-center
+              p-2
+              text-sm
+              font-medium
+              leading-6
+              rounded-md
+              group
+              hover:text-white hover:bg-navy-200
+            "
             :class="
               $route.name === 'products'
                 ? 'bg-navy-200 text-white'
@@ -73,7 +125,17 @@
 
           <nuxt-link
             :to="{ name: 'payments' }"
-            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            class="
+              flex
+              items-center
+              p-2
+              text-sm
+              font-medium
+              leading-6
+              rounded-md
+              group
+              hover:text-white hover:bg-navy-200
+            "
             :class="
               $route.name === 'payments'
                 ? 'bg-navy-200 text-white'
@@ -86,7 +148,17 @@
 
           <nuxt-link
             :to="{ name: 'customers' }"
-            class="flex items-center p-2 text-sm font-medium leading-6 rounded-md  group hover:text-white hover:bg-navy-200"
+            class="
+              flex
+              items-center
+              p-2
+              text-sm
+              font-medium
+              leading-6
+              rounded-md
+              group
+              hover:text-white hover:bg-navy-200
+            "
             :class="
               $route.name === 'customers'
                 ? 'bg-navy-200 text-white'
