@@ -2,7 +2,6 @@
   <div class="min-h-screen overflow-hidden font-sans antialiased bg-gray-200">
     <div class="min-h-full">
       <AppMobileMenu
-        class="w-full overflow-hidden"
         :class="
           isOpen
             ? 'transform translate-x-0 transition duration-500 ease-in'
