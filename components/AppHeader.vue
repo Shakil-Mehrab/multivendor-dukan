@@ -42,15 +42,12 @@
           <BellIcon class="w-6 h-6" />
         </button>
 
-        <div
-          @click.prevent="profileDropdown = !profileDropdown"
-          v-click-outside="hide"
-          class="relative ml-2 md:ml-6"
-        >
+        <div class="relative ml-2 md:ml-6" v-click-outside="hide">
           <div>
             <button
               type="button"
               class="flex items-center h-10 max-w-xs text-sm bg-white rounded-full  focus:outline-none lg:p-2 lg:rounded-md lg:focus:bg-gray-200 hover:bg-gray-50 focus:border"
+              @click.prevent="profileDropdown = !profileDropdown"
             >
               <img
                 class="w-8 h-8 border border-gray-300 rounded-full"
@@ -73,17 +70,124 @@
             class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none"
             v-show="profileDropdown"
           >
-            <nuxt-link
-              :to="{ name: 'auth-profile' }"
-              class="block px-4 py-2 text-sm text-gray-700"
-              >Your Profile</nuxt-link
-            >
-            <a
-              @click.prevent="logout"
-              href="#"
-              class="block px-4 py-2 text-sm text-gray-700"
-              >Logout</a
-            >
+            <div class="p-4 space-y-4">
+              <div class="flex justify-between pb-2 border-b">
+                <span class="block text-base font-semibold text-gray-700"
+                  >Store Status</span
+                >
+
+                <button
+                  type="button"
+                  class="relative inline-flex items-center justify-center flex-shrink-0 w-16 h-5 rounded-full cursor-pointer  group focus:outline-none"
+                  role="switch"
+                  @click="on = !on"
+                >
+                  <span
+                    aria-hidden="true"
+                    class="absolute w-full h-full bg-white rounded-md pointer-events-none "
+                    ><span :class="{ block: on }"></span
+                  ></span>
+                  <span
+                    class="absolute w-full h-6 p-1 mx-auto transition-colors duration-200 ease-in-out bg-gray-200 rounded-full pointer-events-none "
+                    :class="{ 'bg-blue-600': on, 'bg-gray-200': !on }"
+                  >
+                    <span
+                      :class="{
+                        'absolute left-1  text-white top-0 bottom-0 my-auto':
+                          on,
+                        hidden: !on,
+                      }"
+                    >
+                      Open
+                    </span>
+                    <span
+                      :class="{
+                        'absolute right-1  text-white top-0 bottom-0 my-auto':
+                          !on,
+                        hidden: on,
+                      }"
+                    >
+                      Close
+                    </span>
+                  </span>
+                  <span
+                    class="absolute left-0 inline-block w-5 h-5 transition-transform duration-200 ease-in-out transform translate-x-0 bg-white border border-gray-200 rounded-full shadow pointer-events-none  ring-0"
+                    :class="{ 'translate-x-11': on, 'translate-x-0': !on }"
+                  ></span>
+                </button>
+              </div>
+              <nuxt-link
+                :to="{ name: 'account' }"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <UserIcon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+                My Account
+              </nuxt-link>
+
+              <nuxt-link
+                :to="{ name: 'account' }"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <CogIcon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+                Store Setting
+              </nuxt-link>
+
+              <nuxt-link
+                :to="{ name: 'account' }"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <PlayIcon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+                Tutorials
+              </nuxt-link>
+
+              <nuxt-link
+                :to="{ name: 'account' }"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <QuestionMarkCircleIcon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+                Help Center
+              </nuxt-link>
+
+              <nuxt-link
+                :to="{ name: 'account' }"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <CubeTransparentIcon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+                Community
+              </nuxt-link>
+
+              <nuxt-link
+                :to="{ name: 'account' }"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <ChatAlt2Icon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+                Chant With Us
+              </nuxt-link>
+
+              <a
+                @click.prevent="logout"
+                href="#"
+                class="block text-sm font-semibold text-gray-700"
+              >
+                <LogoutIcon
+                  class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
+                />
+
+                Logout</a
+              >
+            </div>
           </div>
         </div>
       </div>
@@ -99,12 +203,20 @@ import {
   BellIcon,
   ChevronDownIcon,
   SearchIcon,
+  UserIcon,
+  LogoutIcon,
+  QuestionMarkCircleIcon,
+  PlayIcon,
+  ChatAlt2Icon,
+  CogIcon,
+  CubeTransparentIcon,
 } from "@vue-hero-icons/outline";
 
 export default {
   data() {
     return {
       profileDropdown: false,
+      on: false,
     };
   },
   components: {
@@ -112,7 +224,15 @@ export default {
     BellIcon,
     ChevronDownIcon,
     SearchIcon,
+    UserIcon,
+    LogoutIcon,
+    QuestionMarkCircleIcon,
+    PlayIcon,
+    ChatAlt2Icon,
+    CogIcon,
+    CubeTransparentIcon,
   },
+
   methods: {
     ...mapActions({
       openDrawer: "drawer/open",
