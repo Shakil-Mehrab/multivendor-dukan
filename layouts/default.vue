@@ -6,7 +6,7 @@
         :class="
           isOpen
             ? 'transform translate-x-0 transition duration-500 ease-in'
-            : 'transform -translate-x-full transition duration-500 ease-out opacity-0 '
+            : 'transform -translate-x-full transition duration-500 ease-out'
         "
       />
 
