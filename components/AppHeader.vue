@@ -11,60 +11,60 @@
       <MenuAlt1Icon class="w-6 h-6" />
     </button>
     <div
-      class="flex justify-between flex-1 w-full px-4 sm:px-6 lg:mx-auto lg:px-8"
+      class="flex items-center justify-between flex-1 w-full px-4  sm:px-6 lg:mx-auto lg:px-8"
     >
-      <div class="flex flex-1">
-        <form class="flex w-full md:ml-0" action="#" method="GET">
-          <label for="search-field" class="sr-only">Search</label>
-          <div class="relative w-full text-gray-400 focus-within:text-gray-600">
-            <div
-              class="absolute inset-y-0 left-0 flex items-center pointer-events-none "
-              aria-hidden="true"
-            >
-              <SearchIcon class="w-5 h-5" />
-            </div>
-            <input
-              id="search-field"
-              name="search-field"
-              class="block w-full h-full py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 border-transparent  focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
-              placeholder="Search transactions"
-              type="search"
-            />
-          </div>
-        </form>
+      <div class="hidden text-xl font-bold sm:block">
+        {{ $route.name == "index" ? "Home" : $route.name }}
       </div>
-      <div class="flex items-center ml-4 md:ml-6">
-        <!-- <button
+      <div class="flex-1 sm:ml-6">
+        <div class="relative w-full text-gray-400 focus-within:text-gray-600">
+          <div
+            class="absolute inset-y-0 flex items-center pointer-events-none  left-2"
+            aria-hidden="true"
+          >
+            <SearchIcon class="w-5 h-5" />
+          </div>
+          <input
+            id="search-field"
+            name="search-field"
+            type="search"
+            placeholder="Search . . . ."
+            class="block w-full h-10 py-2 pl-8 pr-3 text-gray-900 placeholder-gray-500 bg-gray-200 border rounded-md  focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
+          />
+        </div>
+      </div>
+      <div class="flex items-center ml-2 md:ml-6">
+        <button
           type="button"
-          class="p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          class="p-1 text-gray-400 bg-white rounded-full  focus:outline-none focus:bg-gray-200 hover:bg-gray-50 focus:border"
         >
           <span class="sr-only">View notifications</span>
           <BellIcon class="w-6 h-6" />
-        </button> -->
+        </button>
 
         <div
           @click.prevent="profileDropdown = !profileDropdown"
           v-click-outside="hide"
-          class="relative ml-3"
+          class="relative ml-2 md:ml-6"
         >
           <div>
             <button
               type="button"
-              class="flex items-center max-w-xs text-sm bg-white rounded-full  focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 lg:p-2 lg:rounded-md lg:hover:bg-gray-50"
+              class="flex items-center h-10 max-w-xs text-sm bg-white rounded-full  focus:outline-none lg:p-2 lg:rounded-md lg:focus:bg-gray-200 hover:bg-gray-50 focus:border"
             >
-              <!-- <img
-                class="w-8 h-8 rounded-full"
-                v-if="$auth.user.data.profile_photo_path"
-                :src="$auth.user.data.profile_photo_path"
-                :alt="$auth.user.data.name"
+              <img
+                class="w-8 h-8 border border-gray-300 rounded-full"
+                src="@/assets/images/logo.svg"
+                alt="user"
               />
               <span
                 class="hidden ml-3 text-sm font-medium text-gray-700 lg:block"
-                ><span class="sr-only">Open user menu for </span
-                >{{ $auth.user.data.name }}</span
-              > -->
+              >
+                <span class="sr-only">Open user menu for </span>
+                Shakil Sarder
+              </span>
               <ChevronDownIcon
-                class="flex-shrink-0 hidden w-5 h-5 ml-1 text-gray-400 lg:block"
+                class="flex-shrink-0 hidden w-4 h-4 ml-1 text-gray-400 lg:block"
               />
             </button>
           </div>
