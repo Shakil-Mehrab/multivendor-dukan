@@ -1,5 +1,5 @@
 <template>
-  <div>dff</div>
+  <div>index</div>
 </template>
 
 <script>
