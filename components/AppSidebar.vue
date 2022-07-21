@@ -11,7 +11,7 @@
         class="flex flex-col flex-1 pt-10 overflow-y-auto border-t border-gray-700 "
         aria-label="Sidebar"
       >
-        <div class="px-2 space-y-2">
+        <div class="px-2 space-y-4">
           <AppNavLink to="index">
             <HomeIcon class="w-6 h-6 mr-4" aria-hidden="true" />
             Home

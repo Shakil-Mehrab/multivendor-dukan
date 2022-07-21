@@ -69,18 +69,18 @@
           </div>
 
           <div
-            class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none"
+            class="absolute right-0 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg  w-60 ring-1 ring-black ring-opacity-5 focus:outline-none"
             v-show="profileDropdown"
           >
             <div class="p-2 space-y-2">
-              <div class="flex justify-between pb-2 border-b">
-                <span class="block text-base font-semibold text-gray-700"
+              <div class="flex justify-between p-4 border-b">
+                <span class="block text-lg font-semibold text-gray-700"
                   >Store Status</span
                 >
 
                 <button
                   type="button"
-                  class="relative inline-flex items-center justify-center flex-shrink-0 w-16 h-5 rounded-full cursor-pointer  group focus:outline-none"
+                  class="relative inline-flex items-center justify-center flex-shrink-0 w-20 rounded-full cursor-pointer  group focus:outline-none"
                   role="switch"
                   @click="on = !on"
                 >
@@ -90,12 +90,12 @@
                     ><span :class="{ block: on }"></span
                   ></span>
                   <span
-                    class="absolute w-full h-6 p-1 mx-auto transition-colors duration-200 ease-in-out bg-gray-200 rounded-full pointer-events-none "
+                    class="absolute w-full h-8 p-1 mx-auto transition-colors duration-200 ease-in-out bg-gray-200 rounded-full pointer-events-none "
                     :class="{ 'bg-green-600': on, 'bg-gray-200': !on }"
                   >
                     <span
                       :class="{
-                        'absolute left-1.5 font-semibold text-sm  text-white top-0.5 bottom-0 my-auto':
+                        'absolute left-2 font-semibold text-base  text-white top-1 bottom-0 my-auto':
                           on,
                         hidden: !on,
                       }"
@@ -104,7 +104,7 @@
                     </span>
                     <span
                       :class="{
-                        'absolute right-1.5  text-sm font-semibold text-red-600 top-0.5 bottom-0 my-auto':
+                        'absolute right-2  text-base font-semibold text-red-600 top-1 bottom-0 my-auto':
                           !on,
                         hidden: on,
                       }"
@@ -114,7 +114,7 @@
                   </span>
                   <span
                     class="absolute left-0 inline-block w-5 h-5 transition-transform duration-200 ease-in-out transform translate-x-0 bg-white border border-gray-200 rounded-full shadow pointer-events-none  ring-0"
-                    :class="{ 'translate-x-11': on, 'translate-x-0': !on }"
+                    :class="{ 'translate-x-14': on, 'translate-x-2': !on }"
                   ></span>
                 </button>
               </div>
