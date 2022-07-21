@@ -13,7 +13,9 @@
     <div
       class="flex items-center justify-between flex-1 w-full px-4  sm:px-6 lg:mx-auto lg:px-8"
     >
-      <div class="hidden text-xl font-semibold capitalize sm:block">
+      <div
+        class="hidden text-xl font-semibold text-gray-600 capitalize sm:block"
+      >
         {{ $route.name == "index" ? "Home" : $route.name }}
       </div>
       <div class="flex-1 sm:ml-6">
