@@ -70,7 +70,7 @@
             class="absolute right-0 w-48 py-1 mt-2 origin-top-right bg-white rounded-md shadow-lg  ring-1 ring-black ring-opacity-5 focus:outline-none"
             v-show="profileDropdown"
           >
-            <div class="p-4 space-y-4">
+            <div class="p-2 space-y-2">
               <div class="flex justify-between pb-2 border-b">
                 <span class="block text-base font-semibold text-gray-700"
                   >Store Status</span
@@ -89,11 +89,11 @@
                   ></span>
                   <span
                     class="absolute w-full h-6 p-1 mx-auto transition-colors duration-200 ease-in-out bg-gray-200 rounded-full pointer-events-none "
-                    :class="{ 'bg-blue-600': on, 'bg-gray-200': !on }"
+                    :class="{ 'bg-green-600': on, 'bg-gray-200': !on }"
                   >
                     <span
                       :class="{
-                        'absolute left-1  text-white top-0 bottom-0 my-auto':
+                        'absolute left-1.5 font-semibold text-sm  text-white top-0.5 bottom-0 my-auto':
                           on,
                         hidden: !on,
                       }"
@@ -102,7 +102,7 @@
                     </span>
                     <span
                       :class="{
-                        'absolute right-1  text-white top-0 bottom-0 my-auto':
+                        'absolute right-1.5  text-sm font-semibold text-red-600 top-0.5 bottom-0 my-auto':
                           !on,
                         hidden: on,
                       }"
@@ -116,77 +116,56 @@
                   ></span>
                 </button>
               </div>
-              <nuxt-link
-                :to="{ name: 'account' }"
-                class="block text-sm font-semibold text-gray-700"
-              >
+
+              <ProfileDropDownLink to="account">
                 <UserIcon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
                 My Account
-              </nuxt-link>
+              </ProfileDropDownLink>
 
-              <nuxt-link
-                :to="{ name: 'account' }"
-                class="block text-sm font-semibold text-gray-700"
-              >
+              <ProfileDropDownLink to="account">
                 <CogIcon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
                 Store Setting
-              </nuxt-link>
+              </ProfileDropDownLink>
 
-              <nuxt-link
-                :to="{ name: 'account' }"
-                class="block text-sm font-semibold text-gray-700"
-              >
+              <ProfileDropDownLink to="account">
                 <PlayIcon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
                 Tutorials
-              </nuxt-link>
+              </ProfileDropDownLink>
 
-              <nuxt-link
-                :to="{ name: 'account' }"
-                class="block text-sm font-semibold text-gray-700"
-              >
+              <ProfileDropDownLink to="account">
                 <QuestionMarkCircleIcon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
                 Help Center
-              </nuxt-link>
+              </ProfileDropDownLink>
 
-              <nuxt-link
-                :to="{ name: 'account' }"
-                class="block text-sm font-semibold text-gray-700"
-              >
+              <ProfileDropDownLink to="account">
                 <CubeTransparentIcon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
                 Community
-              </nuxt-link>
+              </ProfileDropDownLink>
 
-              <nuxt-link
-                :to="{ name: 'account' }"
-                class="block text-sm font-semibold text-gray-700"
-              >
+              <ProfileDropDownLink to="account">
                 <ChatAlt2Icon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
                 Chant With Us
-              </nuxt-link>
+              </ProfileDropDownLink>
 
-              <a
-                @click.prevent="logout"
-                href="#"
-                class="block text-sm font-semibold text-gray-700"
-              >
+              <ProfileDropDownLink @click.prevent="logout" href="#">
                 <LogoutIcon
                   class="flex-shrink-0 inline-block p-1 text-gray-600 bg-gray-200 rounded-full  w-7 h-7"
                 />
 
-                Logout</a
-              >
+                Logout
+              </ProfileDropDownLink>
             </div>
           </div>
         </div>
